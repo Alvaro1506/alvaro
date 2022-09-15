@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: darkgreen;
+    text-decoration: none;
+}
+.lista{
+    display: none;
+}
+a:hover{
+    color: darkturquoise;
+}
+img{
+    width: 50vw;
+    height: 90vh;
+}
+.parte1{
+    background-color: rgb(245, 241, 241);
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    font-family: Times, serif;
+}
+h1{
+    padding-left: 120px;
+    margin-bottom: 30px;
+
+}
+.menu{
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+    list-style: none;
+}
+.menu li{
+    letter-spacing: 3px;
+    margin-left: 32px;
+    list-style: none;
+}
+.logo{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: aliceblue;
+    cursor: pointer;
+}
+nav{
+    display: flex;
+    background-color: gold;
+    font-family: 'Times New Roman', Times, serif;
+    color: gainsboro;
+    align-items: center;
+    justify-content: space-around;
+    height:10vh ;
+    z-index: 7;
+}
+.menucenter{
+    display: none;
+    cursor: pointer;
+}
+.menucenter div{
+    width: 50px;
+    height: 2px;
+    background-color: rgb(224, 153, 59);
+    margin: 8px;
+    transition: 1s;
+}
+.hamburguer div{   
+    left: 70px;
+    width: 50px;
+    height: 2px;
+    background-color: antiquewhite;
+    margin:  8px;
+    transition: 1s;
+}
+ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+li{
+    display: list-item;
+}
+@media (max-width:900px){
+    body{
+        overflow-y: hidden;
+    }
+    nav{
+        z-index: 3;
+    }
+    .menu{
+        position: absolute;
+        top: 10vh;
+        flex-direction: column;
+        right: 0;
+        width: 100vw;
+        background-color: lawngreen;
+        justify-content: space-around;
+        align-items: center;
+        height: 90vh;
+        transform: translateY(-150%);
+        transition: transform 1s ease-out;
+        z-index: 2;
+
+    }
+    .hamburguer{
+        display: block;
+        cursor: pointer;
+    }
+    
+    .menu li{
+        margin-left: 0;
+    }
+    .logo{
+        width: 25%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: aliceblue;
+        background-image: url('logo.svg');
+        height: 10vh;
+    }
+    .menucenter{
+        display: block;
+        cursor: pointer;
+    }
+    .linha::before{
+        border: white 2px solid;
+        height: auto;
+        width: 100%;
+        position: relative;
+        bottom: 100px;
+    }
+
+}
+.menu.active{
+    transform: translateY(0);
+
+}
+@keyframes fade{
+    from{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+}
+.lista.active .linha{
+    transform: rotate(-45deg) translate(-8px,8px);
+
+}
+.lista.active .linha{
+    opacity: 0;
+
+}
+.lista.active .linha1{
+    transform: rotate(45deg) translate(-5px,-7px);
+
+}
+@keyframes animation{
+    from{
+        border-radius: 0px;
+    }
+    to{
+        border-radius: 300px;
+    }
+}

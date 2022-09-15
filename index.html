@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="menucenter">
+        <nav>
+             <h1 class="logo">Naique</h1>
+            
+            <div class="hamburger">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+                
+            </div>
+            
+               
+                <ul class="lista active">
+                    <li><a href="">camisa</a></li>
+                    
+                    <li><a href="">bermuda</a></li>
+                    
+                    <li><a href="">tenis</a></li>
+                    
+                    <li><a href="">objetos</a></li>
+                    
+                    
+                </ul>
+                
+        </nav>
+    </header>
+    <section class="parte1">  
+        <img src="camisa.png" alt="">
+        <div>
+            <h1><a href="">Promoçao só HOJE </a></h1>
+            <p><a href=""> Venha comprar tudo oque você precisar aqui tem de tudo</a></p>
+        </div>
+    </section>  
+<script >
+class MobileNavbar{
+    constructor(menucenter,menu,navLinks){
+        this.menucenter = document.querySelector(menucenter);
+        this.menu = document.querySelector(menu);
+        this.navLinks = document.querySelectorAll(navLinks);
+        this.activeClass = "active";
+        this.handleClick = this.handleClick.bind(this);
+
+    }
+    addClickEvent(){
+        this.menucenter = document.addEventListener("click", this.handleClick);
+    }
+    handleClick(){
+        console.log(this);
+        this.menu.classList.toggle(this.activeClass);
+    }
+    init(){
+        if(this.menucenter){
+            this.addClickEvent();
+        }
+        return this;
+    }
+}
+
+const mobileNavbar = new MobileNavbar(
+    ".menucenter",
+    ".menu",
+    ".menu li",
+
+);
+mobileNavbar.init();
+</script>
+</body>
+</html>
